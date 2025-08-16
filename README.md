@@ -1,3 +1,9 @@
+this is only the build itself, to play you need assets
+2.1 assets (works, but alot of stuff is broken)
+2.2 assets (works very well with some warnings of missing objects)
+beta 6 remake assets (wip): [insert link]
+
+
 # Sonic Robo Blast 2
 
 [![Build status](https://ci.appveyor.com/api/projects/status/399d4hcw9yy7hg2y?svg=true)](https://ci.appveyor.com/project/STJr/srb2)
