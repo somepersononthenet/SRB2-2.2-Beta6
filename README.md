@@ -1,6 +1,6 @@
-this is only the build itself, to play you need assets
-2.1 assets (works, but alot of stuff is broken)
-2.2 assets (works very well with some warnings of missing objects)
+this is only the build itself, to play you need assets <br>
+2.1 assets (works, but alot of stuff is broken) <br>
+2.2 assets (works very well with some warnings of missing objects) <br>
 beta 6 remake assets (wip): [insert link]
 
 
