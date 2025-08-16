@@ -1,7 +1,6 @@
 this is only the build itself, to play you need assets <br>
-2.1 assets (works, but alot of stuff is broken) <br>
-2.2 assets (works very well with some warnings of missing objects) <br>
-beta 6 remake assets (wip): [insert link]
+https://drive.google.com/drive/folders/1PtGSiDdzUcyCFolLX8Z-DYkBfXeJZrl9?usp=sharing
+(not 100% complete btw)
 
 
 # Sonic Robo Blast 2
