@@ -13,7 +13,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: cmake
-      run: cmake -B build
     - name: make
-      run: make -C build
+      run: make -C src/
