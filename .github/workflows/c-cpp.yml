@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: sdl2things
+    - name: install dependencies
     - run: sudo apt install make git gcc libsdl2-mixer-dev libpng-dev libcurl4-openssl-dev libgme-dev libopenmpt-dev libminiupnpc-dev
     - name: cmake
       run: cmake -B build
