@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: make
-      run: make -C -MINGW=1 src/
+      run: make -C src/ --keep-going  -j MINGW$IS64BIT=1
