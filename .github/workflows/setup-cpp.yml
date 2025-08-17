@@ -1,0 +1,8 @@
+      - name: Setup Cpp
+        uses: aminya/setup-cpp@v1
+        with:
+          compiler: gcc
+          vcvarsall: true
+          cmake: true
+          ninja: true
+          vcpkg: true
