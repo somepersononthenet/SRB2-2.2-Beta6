@@ -12,6 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Setup Cpp
+       uses: aminya/setup-cpp@v1
+        with:
+          compiler: gcc
+          vcvarsall: true
+          cmake: true
+          ninja: true
+          vcpkg: true
     - uses: actions/checkout@v4
     - name: configure
       run: ./configure
