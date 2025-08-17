@@ -9,15 +9,12 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Install compiler
-      id: install_cc
-      uses: rlalik/setup-cpp-compiler@master
-      with:
-        compiler: latest
     - uses: actions/checkout@v4
+    - name: sdl2things
+    - run: sudo apt install make git gcc libsdl2-mixer-dev libpng-dev libcurl4-openssl-dev libgme-dev libopenmpt-dev libminiupnpc-dev
     - name: cmake
       run: cmake -B build
     - name: make
