@@ -18,10 +18,8 @@ jobs:
       with:
         compiler: latest
     - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
     - name: make
-      run: make
+      run: make -B build
     - name: make check
       run: make check
     - name: make distcheck
