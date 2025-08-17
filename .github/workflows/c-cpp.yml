@@ -18,8 +18,10 @@ jobs:
       with:
         compiler: latest
     - uses: actions/checkout@v4
+    - name: cmake-configure
+    - uses: snickerbockers/cmake-configure@prerel1
     - name: make
-      run: make
+      run: make -C build
     - name: make check
       run: make check
     - name: make distcheck
