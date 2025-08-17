@@ -27,7 +27,7 @@ jobs:
         run: |
           sudo apt update
           [ "${{ matrix.arch.name }}" = "x86" ] && PKGSUFFIX="i686" || PKGSUFFIX="x86-64"
-          sudo apt install -y gcc-mingw-w64-$PKGSUFFIX binutils-mingw-w64-$PKGSUFFIX ninja-build
+          sudo apt install -y gcc-mingw-w64-$PKGSUFFIX binutils-mingw-w64-$PKGSUFFIX ninja-build libsdl2-mixer-dev libpng-dev libcurl4-openssl-dev libgme-dev libopenmpt-dev libminiupnpc-dev
 
       - name: Build SRB2 Legacy
         run: |
