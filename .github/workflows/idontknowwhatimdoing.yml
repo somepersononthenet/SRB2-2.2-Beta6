@@ -32,7 +32,8 @@ jobs:
       - name: Build SRB2 Legacy
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
-          ninja -C src/ --keep-going  -j$(nproc) MINGW$IS64BIT=1
+          cmake -B build -G Ninja
+          ninja -C build
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
