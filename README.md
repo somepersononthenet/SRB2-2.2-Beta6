@@ -13,11 +13,11 @@ https://drive.google.com/drive/folders/1PtGSiDdzUcyCFolLX8Z-DYkBfXeJZrl9?usp=sha
 
 ## Dependencies
 - NASM (x86 builds only)
-- SDL2 (Linux/OS X only)
-- SDL2-Mixer (Linux/OS X only)
-- libupnp (Linux/OS X only)
-- libgme (Linux/OS X only)
-- libopenmpt (Linux/OS X only)
+- SDL2 (Linux/macOS only)
+- SDL2-Mixer (Linux/macOS only)
+- libupnp (Linux/macOS only)
+- libgme (Linux/macOS only)
+- libopenmpt (Linux/macOS only)
 
 ## Compiling
 
