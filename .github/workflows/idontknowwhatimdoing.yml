@@ -29,16 +29,16 @@ jobs:
           [ "${{ matrix.arch.name }}" = "x86" ] && PKGSUFFIX="i686" || PKGSUFFIX="x86-64"
           sudo apt install -y gcc-mingw-w64-$PKGSUFFIX binutils-mingw-w64-$PKGSUFFIX ninja-build libsdl2-mixer-dev libpng-dev libcurl4-openssl-dev libgme-dev libopenmpt-dev libminiupnpc-dev
 
-      - name: Build SRB2 Legacy
+      - name: Build SRB2
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
-          cmake -B build -G Ninja
-          ninja -C build
+          cmake -B build
+          make -C build
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: srb2legacy-windows-${{ matrix.arch.name }}-${{ github.sha }}
+          name: srb2nowaythewindowsbuildactuallyworked-windows-${{ matrix.arch.name }}-${{ github.sha }}
           path: |
             bin/
             src/comptime.h
