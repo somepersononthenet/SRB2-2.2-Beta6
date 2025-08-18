@@ -850,7 +850,7 @@ static void IdentifyVersion(void)
 	// checking in D_SRB2Main
 
 	// Add the maps
-	D_AddFile(va(pandf,srb2waddir,"zones.dta"));
+	D_AddFile(va(pandf,srb2waddir,"zones.pk3"));
 
 	// Add the players
 	D_AddFile(va(pandf,srb2waddir, "player.dta"));
