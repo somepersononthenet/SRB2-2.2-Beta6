@@ -33,7 +33,7 @@ jobs:
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
           cmake -B build
-          make -C build
+          make -C build MINGW64=1
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
