@@ -21,7 +21,7 @@ https://drive.google.com/drive/folders/1PtGSiDdzUcyCFolLX8Z-DYkBfXeJZrl9?usp=sha
 
 ## Compiling
 
-See [SRB2 Wiki/Source code compiling](http://wiki.srb2.org/wiki/Source_code_compiling)
+See [SRB2 Wiki/Source code compiling](http://wiki.srb2.org/w/index.php?title=Source_code_compiling/Makefiles&oldid=102514)
 
 ## Disclaimer
 Sonic Team Junior is in no way affiliated with SEGA or Sonic Team. We do not claim ownership of any of SEGA's intellectual property used in SRB2.
