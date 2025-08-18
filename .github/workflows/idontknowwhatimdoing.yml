@@ -1,10 +1,10 @@
-name: Windows
+ame: Windows
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "next", "master", "ci" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "next", "master" ]
 
 jobs:
   build:
@@ -27,18 +27,17 @@ jobs:
         run: |
           sudo apt update
           [ "${{ matrix.arch.name }}" = "x86" ] && PKGSUFFIX="i686" || PKGSUFFIX="x86-64"
-          sudo apt install -y gcc-mingw-w64-$PKGSUFFIX binutils-mingw-w64-$PKGSUFFIX ninja-build libsdl2-mixer-dev libpng-dev libcurl4-openssl-dev libgme-dev libopenmpt-dev libminiupnpc-dev nasm
+          sudo apt install -y gcc-mingw-w64-$PKGSUFFIX binutils-mingw-w64-$PKGSUFFIX make libsdl2-mixer-dev libpng-dev libcurl4-openssl-dev libgme-dev libopenmpt-dev libminiupnpc-dev
 
       - name: Build SRB2
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
-          cd src
-          make MINGW=1 SDL=1
+          make -C src/ --keep-going  -j$(nproc) MINGW$IS64BIT=1
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: srb2nowaythewindowsbuildactuallyworked-windows-${{ matrix.arch.name }}-${{ github.sha }}
+          name: srb2wow-windows-${{ matrix.arch.name }}-${{ github.sha }}
           path: |
             bin/
             src/comptime.h
