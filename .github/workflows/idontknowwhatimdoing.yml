@@ -2,9 +2,9 @@ ame: Windows
 
 on:
   push:
-    branches: [ "next", "master", "ci" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "next", "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
