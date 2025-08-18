@@ -32,7 +32,8 @@ jobs:
       - name: Build SRB2
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
-          make -C src/ --keep-going  -j$(nproc) MINGW$IS64BIT=1
+          set PREFIX=i686-w64-mingw32
+          make -C src/ MINGW=1 
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
