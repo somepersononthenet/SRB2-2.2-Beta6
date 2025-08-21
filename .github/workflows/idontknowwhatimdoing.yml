@@ -27,13 +27,13 @@ jobs:
         run: |
           sudo apt update
           [ "${{ matrix.arch.name }}" = "x86" ] && PKGSUFFIX="i686" || PKGSUFFIX="x86-64"
-          sudo apt install -y nasm build-essential libpng-dev zlib1g-dev libsdl2-dev libsdl2-mixer-dev libgme-dev libopenmpt-dev i686-w64-mingw32-gcc
+          sudo apt install -y nasm build-essential libpng-dev zlib1g-dev libsdl2-dev libsdl2-mixer-dev libgme-dev libopenmpt-dev emscripten
 
       - name: Build SRB2
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
-          set PREFIX=i686-w64-mingw32
-          make -C src/ MINGW=1 
+          emcmake -B build
+          emmake make -C build -j 4
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
