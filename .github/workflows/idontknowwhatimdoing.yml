@@ -2,9 +2,11 @@ name: Windows
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "workflow-testing" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "workflow-testing" ]
+
+    workflow_disptach:
 
 jobs:
   build:
