@@ -32,8 +32,7 @@ jobs:
       - name: Build SRB2
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
-          emcmake cmake -B build
-          emmake make -C build -j 4
+          emmake make -C src MINGW=1 -j 4 
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
