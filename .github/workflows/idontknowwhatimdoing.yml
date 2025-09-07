@@ -16,8 +16,6 @@ jobs:
         arch:
           - name: x86
             prefix: i686-w64-mingw32
-          - name: x86_64
-            prefix: x86_64-w64-mingw32
 
     runs-on: ubuntu-latest
     env:
@@ -34,7 +32,8 @@ jobs:
       - name: Build SRB2
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
-          emmake make -C src MINGW=1 -j 4 
+          emmake set PREFIX=i686-w64-mingw32
+          emmake make -C src/ MINGW=1 -j 4 
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
