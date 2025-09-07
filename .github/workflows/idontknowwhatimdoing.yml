@@ -29,7 +29,7 @@ jobs:
         run: |
           sudo apt update
           [ "${{ matrix.arch.name }}" = "x86" ] && PKGSUFFIX="i686" || PKGSUFFIX="x86-64"
-          sudo apt install -y nasm build-essential libpng-dev zlib1g-dev libsdl2-dev libsdl2-mixer-dev libgme-dev libopenmpt-dev emscripten
+          sudo apt install -y nasm build-essential libpng-dev zlib1g-dev libsdl2-dev libsdl2-mixer-dev libgme-dev libopenmpt-dev emscripten gcc-mingw-w64
 
       - name: Build SRB2
         run: |
