@@ -26,12 +26,12 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          [ "${{ matrix.arch.name }}" = "x86" ] && PKGSUFFIX="i686" || PKGSUFFIX="x86-64"
+          [ "${{ matrix.arch.name }}" = "x86" ]
           sudo apt install -y nasm build-essential libpng-dev zlib1g-dev libsdl2-dev libsdl2-mixer-dev libgme-dev libopenmpt-dev emscripten gcc-mingw-w64
 
       - name: Build SRB2
         run: |
-          [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
+          [ "${{ matrix.arch.name }}" = "x86" ]
           emmake make -C src/ MINGW=1 -j 4 
 
       - name: Upload artifacts
