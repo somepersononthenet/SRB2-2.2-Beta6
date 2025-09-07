@@ -1,0 +1,43 @@
+name: Windows TEST
+
+on:
+  push:
+    branches: [ "workflow-testing" ]
+  pull_request:
+    branches: [ "workflow-testing" ]
+    
+    workflow_dispatch:
+
+jobs:
+  build:
+    continue-on-error: true
+    strategy:
+      matrix:
+        arch:
+          - name: x86
+            prefix: i686-w64-mingw32
+
+    runs-on: ubuntu-latest
+    env:
+      PREFIX: ${{ matrix.arch.prefix }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          [ "${{ matrix.arch.name }}" = "x86" ]
+          sudo apt install -y nasm build-essential libpng-dev zlib1g-dev libsdl2-dev libsdl2-mixer-dev libgme-dev libopenmpt-dev emscripten gcc-mingw-w64-$PKGSUFFIX binutils-mingw-w64-$PKGSUFFIX
+
+      - name: Build Beta 6
+        run: |
+          [ "${{ matrix.arch.name }}" = "x86" ]
+          make -C src/ --keep-going  -j$(nproc)
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: srb2b6-windows-${{ matrix.arch.name }}-${{ github.sha }}
+          path: |
+            bin/
+            src/comptime.h
