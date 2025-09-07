@@ -6,11 +6,11 @@ on:
   pull_request:
     branches: [ "workflow-testing" ]
 
-    workflow_disptach:
+    workflow_dispatch:
 
 jobs:
   build:
-    continue-on-error: true
+    continue-on-error: false
     strategy:
       matrix:
         arch:
@@ -32,7 +32,7 @@ jobs:
       - name: Build SRB2
         run: |
           [ "${{ matrix.arch.name }}" = "x86" ] && IS64BIT="" || IS64BIT="64"
-          emmake set PREFIX=i686-w64-mingw32
+          set PREFIX=i686-w64-mingw32
           emmake make -C src/ MINGW=1 -j 4 
 
       - name: Upload artifacts
